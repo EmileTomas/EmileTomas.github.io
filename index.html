@@ -230,8 +230,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/11/05/hello-world/" itemprop="url">
-                  Hello World
+                <a class="post-title-link" href="/2016/11/05/C2 Lexical Analysis/" itemprop="url">
+                  Unbenannt
                 </a>
               
             
@@ -244,7 +244,7 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-11-05T09:40:07+08:00" content="2016-11-05">
+            <time itemprop="dateCreated" datetime="2016-11-05T10:27:43+08:00" content="2016-11-05">
               2016-11-05
             </time>
           </span>
@@ -274,15 +274,26 @@
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+            <h1 id="C2-Lexical-Analysis"><a href="#C2-Lexical-Analysis" class="headerlink" title="C2 Lexical Analysis"></a>C2 Lexical Analysis</h1><p><strong>本教程对编译原理词法分析部分实验进行说明，旨在解决一些配置上的问题，以帮助他人少走弯路。</strong></p>
+<p>虎书给出的所有<strong>framework</strong>都是默认以<code>makefile</code>进行编译的,即在<code>makefile</code>目录下终端输入<code>make</code>命令进行编译.但是由于助教给出的词法工具是<code>Jflex-1.4.1</code>版本,而<code>makefile</code>中指定的是<code>Jlex</code>,这就导致<code>make</code>时出现错误.</p>
+<p><strong>解决办法:</strong></p>
+<ol>
+<li><p>前往官方下载最新版<strong><a href="http://www.jflex.de/download.html" target="_blank" rel="external">JFlex-1.6.1.tar.gz</a></strong>, 下载当前最新版本即可,此刻最新是1.6.1</p>
+</li>
+<li><p>解压至任意目录下,推荐解压至不会轻易删除的目录中,比如我解压到了<code>/usr/share</code>目录下.</p>
+</li>
+<li><p>添加<code>Jflex-1.6.1</code>下的<code>/lib/jflex-1.6.1.jar</code>进Linux的<code>CLASSPATH</code>目录中.</p>
+<p>实例方法:</p>
+<ol>
+<li><code>sudo gedit /etc/profile</code></li>
+<li>在末尾<code>export CLASSPATH=</code>一行中加入<code>:/usr/share/jflex-1.6.1/lib/jflex-1.6.1.jar</code>(注意开始的<strong>:</strong>号.是分隔用的)</li>
+</ol>
+</li>
+<li><p>Log out 以让<code>CLASSPATH</code>生效</p>
+</li>
+<li><p>修改<code>Makefile</code>中的<code>Jlex</code>部分,这里贴出修改后的内容,请自行寻找区别</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">JFLAGS=-g</div><div class="line">Parse/Main.class: Parse/*.java Parse/Yylex.java</div><div class="line">	javac $&#123;JFLAGS&#125; Parse/*.java</div><div class="line">Parse/Yylex.java: Parse/Tiger.lex</div><div class="line">	cd Parse; java jflex.Main Tiger.lex;</div><div class="line">ErrorMsg/ErrorMsg.class:  ErrorMsg/*.java</div><div class="line">	javac $&#123;JFLAGS&#125; ErrorMsg/*.java</div><div class="line">clean:</div><div class="line">	rm Parse/*.class ErrorMsg/*.class Parse/Yylex.java</div></pre></td></tr></table></figure></li>
+</ol>
 
           
         
