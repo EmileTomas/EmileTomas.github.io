@@ -84,28 +84,19 @@
 
 
 
-<meta name="description" content="C2 Lexical Analysis本教程对编译原理词法分析部分实验进行说明，旨在解决一些配置上的问题，以帮助他人少走弯路。
-虎书给出的所有framework都是默认以makefile进行编译的,即在makefile目录下终端输入make命令进行编译.但是由于助教给出的词法工具是Jflex-1.4.1版本,而makefile中指定的是Jlex,这就导致make时出现错误.
-解决办法:
-
-前往官方">
+<meta name="description" content="本教程对编译原理词法分析部分实验进行说明，旨在解决一些配置上的问题，以帮助他人少走弯路。
+虎书给出的所有framework都是默认以makefile进行编译的,即在makefile目录下终端输入make命令进行编译.但是由于助教给出的词法工具是Jflex-1.4.1版本,而makefile中指定的是Jlex,这就导致make时出现错误.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Wanderland">
+<meta property="og:title" content="C2 Lexical Analysis">
 <meta property="og:url" content="http://yoursite.com/2016/11/05/C2 Lexical Analysis/index.html">
 <meta property="og:site_name" content="Wanderland">
-<meta property="og:description" content="C2 Lexical Analysis本教程对编译原理词法分析部分实验进行说明，旨在解决一些配置上的问题，以帮助他人少走弯路。
-虎书给出的所有framework都是默认以makefile进行编译的,即在makefile目录下终端输入make命令进行编译.但是由于助教给出的词法工具是Jflex-1.4.1版本,而makefile中指定的是Jlex,这就导致make时出现错误.
-解决办法:
-
-前往官方">
-<meta property="og:updated_time" content="2016-11-04T15:50:35.284Z">
+<meta property="og:description" content="本教程对编译原理词法分析部分实验进行说明，旨在解决一些配置上的问题，以帮助他人少走弯路。
+虎书给出的所有framework都是默认以makefile进行编译的,即在makefile目录下终端输入make命令进行编译.但是由于助教给出的词法工具是Jflex-1.4.1版本,而makefile中指定的是Jlex,这就导致make时出现错误.">
+<meta property="og:updated_time" content="2016-11-05T02:35:52.846Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Wanderland">
-<meta name="twitter:description" content="C2 Lexical Analysis本教程对编译原理词法分析部分实验进行说明，旨在解决一些配置上的问题，以帮助他人少走弯路。
-虎书给出的所有framework都是默认以makefile进行编译的,即在makefile目录下终端输入make命令进行编译.但是由于助教给出的词法工具是Jflex-1.4.1版本,而makefile中指定的是Jlex,这就导致make时出现错误.
-解决办法:
-
-前往官方">
+<meta name="twitter:title" content="C2 Lexical Analysis">
+<meta name="twitter:description" content="本教程对编译原理词法分析部分实验进行说明，旨在解决一些配置上的问题，以帮助他人少走弯路。
+虎书给出的所有framework都是默认以makefile进行编译的,即在makefile目录下终端输入make命令进行编译.但是由于助教给出的词法工具是Jflex-1.4.1版本,而makefile中指定的是Jlex,这就导致make时出现错误.">
 
 
 
@@ -123,7 +114,7 @@
   };
 </script>
 
-  <title>  | Wanderland </title>
+  <title> C2 Lexical Analysis | Wanderland </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -243,7 +234,7 @@
             
             
               
-                
+                C2 Lexical Analysis
               
             
           </h1>
@@ -255,11 +246,30 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-11-05T10:27:43+08:00" content="2016-11-05">
+            <time itemprop="dateCreated" datetime="2016-11-05T10:35:52+08:00" content="2016-11-05">
               2016-11-05
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">in</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Compiler-Principle/" itemprop="url" rel="index">
+                    <span itemprop="name">Compiler Principle</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
@@ -283,8 +293,9 @@
       
 
       
-        <h1 id="C2-Lexical-Analysis"><a href="#C2-Lexical-Analysis" class="headerlink" title="C2 Lexical Analysis"></a>C2 Lexical Analysis</h1><p><strong>本教程对编译原理词法分析部分实验进行说明，旨在解决一些配置上的问题，以帮助他人少走弯路。</strong></p>
+        <p><strong>本教程对编译原理词法分析部分实验进行说明，旨在解决一些配置上的问题，以帮助他人少走弯路。</strong></p>
 <p>虎书给出的所有<strong>framework</strong>都是默认以<code>makefile</code>进行编译的,即在<code>makefile</code>目录下终端输入<code>make</code>命令进行编译.但是由于助教给出的词法工具是<code>Jflex-1.4.1</code>版本,而<code>makefile</code>中指定的是<code>Jlex</code>,这就导致<code>make</code>时出现错误.</p>
+<a id="more"></a>
 <p><strong>解决办法:</strong></p>
 <ol>
 <li><p>前往官方下载最新版<strong><a href="http://www.jflex.de/download.html" target="_blank" rel="external">JFlex-1.6.1.tar.gz</a></strong>, 下载当前最新版本即可,此刻最新是1.6.1</p>
@@ -393,6 +404,13 @@
           </div>
 
           
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">Kategorien</span>
+              
+            </div>
+          
 
           
 
@@ -419,7 +437,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#C2-Lexical-Analysis"><span class="nav-number">1.</span> <span class="nav-text">C2 Lexical Analysis</span></a></li></ol></div>
+              <p class="post-toc-empty">Dieser Artikel hat kein Inhaltsverzeichnis</p>
             
           </div>
         </section>

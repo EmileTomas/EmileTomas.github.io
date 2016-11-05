@@ -231,7 +231,7 @@
               
                 
                 <a class="post-title-link" href="/2016/11/05/C2 Lexical Analysis/" itemprop="url">
-                  Unbenannt
+                  C2 Lexical Analysis
                 </a>
               
             
@@ -244,11 +244,30 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-11-05T10:27:43+08:00" content="2016-11-05">
+            <time itemprop="dateCreated" datetime="2016-11-05T10:35:52+08:00" content="2016-11-05">
               2016-11-05
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">in</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Compiler-Principle/" itemprop="url" rel="index">
+                    <span itemprop="name">Compiler Principle</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
@@ -273,29 +292,13 @@
 
       
         
-          
-            <h1 id="C2-Lexical-Analysis"><a href="#C2-Lexical-Analysis" class="headerlink" title="C2 Lexical Analysis"></a>C2 Lexical Analysis</h1><p><strong>本教程对编译原理词法分析部分实验进行说明，旨在解决一些配置上的问题，以帮助他人少走弯路。</strong></p>
+          <p><strong>本教程对编译原理词法分析部分实验进行说明，旨在解决一些配置上的问题，以帮助他人少走弯路。</strong></p>
 <p>虎书给出的所有<strong>framework</strong>都是默认以<code>makefile</code>进行编译的,即在<code>makefile</code>目录下终端输入<code>make</code>命令进行编译.但是由于助教给出的词法工具是<code>Jflex-1.4.1</code>版本,而<code>makefile</code>中指定的是<code>Jlex</code>,这就导致<code>make</code>时出现错误.</p>
-<p><strong>解决办法:</strong></p>
-<ol>
-<li><p>前往官方下载最新版<strong><a href="http://www.jflex.de/download.html" target="_blank" rel="external">JFlex-1.6.1.tar.gz</a></strong>, 下载当前最新版本即可,此刻最新是1.6.1</p>
-</li>
-<li><p>解压至任意目录下,推荐解压至不会轻易删除的目录中,比如我解压到了<code>/usr/share</code>目录下.</p>
-</li>
-<li><p>添加<code>Jflex-1.6.1</code>下的<code>/lib/jflex-1.6.1.jar</code>进Linux的<code>CLASSPATH</code>目录中.</p>
-<p>实例方法:</p>
-<ol>
-<li><code>sudo gedit /etc/profile</code></li>
-<li>在末尾<code>export CLASSPATH=</code>一行中加入<code>:/usr/share/jflex-1.6.1/lib/jflex-1.6.1.jar</code>(注意开始的<strong>:</strong>号.是分隔用的)</li>
-</ol>
-</li>
-<li><p>Log out 以让<code>CLASSPATH</code>生效</p>
-</li>
-<li><p>修改<code>Makefile</code>中的<code>Jlex</code>部分,这里贴出修改后的内容,请自行寻找区别</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">JFLAGS=-g</div><div class="line">Parse/Main.class: Parse/*.java Parse/Yylex.java</div><div class="line">	javac $&#123;JFLAGS&#125; Parse/*.java</div><div class="line">Parse/Yylex.java: Parse/Tiger.lex</div><div class="line">	cd Parse; java jflex.Main Tiger.lex;</div><div class="line">ErrorMsg/ErrorMsg.class:  ErrorMsg/*.java</div><div class="line">	javac $&#123;JFLAGS&#125; ErrorMsg/*.java</div><div class="line">clean:</div><div class="line">	rm Parse/*.class ErrorMsg/*.class Parse/Yylex.java</div></pre></td></tr></table></figure></li>
-</ol>
-
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/11/05/C2 Lexical Analysis/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -368,6 +371,13 @@
             </a>
           </div>
 
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">Kategorien</span>
+              
+            </div>
           
 
           
