@@ -410,23 +410,6 @@
 <p>本实验虎书并未提供现成框架,整个<code>Semant</code> package需要自己建立,当然虎书在pdf中已经提供了大部分的思路和实例代码了.主要工作便是将示例代码推广以及解决其中遇见的各种特殊情况.相比与词法分析与语法分析需要对课本有更深刻的掌握.</p>
 <h2 id="实验说明"><a href="#实验说明" class="headerlink" title="实验说明"></a>实验说明</h2><h3 id="实现说明"><a href="#实现说明" class="headerlink" title="实现说明"></a>实现说明</h3><p>整体思路:</p>
 <p>将语法分析输出的抽象语法输入至语义分析,在语义分析的过程中,构建符号表,一边进行符号表的增添,一边进行类型检查,当发现类型不匹配,便输出错误.</p>
-<ol>
-<li>符号表采用<code>Imperative Symbol Table</code> ,通过建立一个<code>undo</code>栈实现不同<strong>环境</strong>的保存.</li>
-<li><p>整个分析过程有两个<strong>环境</strong>(符号表实例),分别是<code>Tenv</code>和<code>Venv</code>. </p>
-<ul>
-<li><code>Tenv</code>: Type Environment, 用于记录Type项的相关信息</li>
-<li><code>Venv</code>:Value Environment, 用于记录Function以及Variables</li>
-</ul>
-</li>
-<li><p>类型检查有三个部分,分别为:</p>
-<ul>
-<li>Type-check expression</li>
-<li>Type-check variable subscript, and fields</li>
-<li>Type-check Declaration </li>
-</ul>
-</li>
-<li>修改<code>Main.java</code>进行语义分析</li>
-</ol>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/11/25/Semant(ch5)/#more" rel="contents">
               Read more &raquo;
@@ -654,8 +637,6 @@
           <h3 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h3><p>​    使用<code>Jflex</code>工具生成符合<code>Tiger Language</code>的词法分析器,并在给出的框架下进行词法分析,输出Token流.</p>
 <h3 id="实验说明"><a href="#实验说明" class="headerlink" title="实验说明"></a>实验说明</h3><p>​    本实验主要难点在于<code>Jflex</code>的使用,以及<code>lex</code>文件的编写, 由于虎书成书久远,所以在使用虎书框架提供的<code>make</code>文件时会出现一些Bug. </p>
 <p>​    通过下载官网最新版<code>Jflex 1.6.1</code> 并将相应<code>jar</code>包添加至系统路径,便可以使用组新的<code>Jflex</code>进行词法生成. 同时对<code>make</code>文件根据<code>Jfex</code>版本变化细微调整一下指令.修改后的<code>make</code>文件如下</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">JFLAGS=-g</div><div class="line"></div><div class="line">Parse/Main.class: Parse/*.java Parse/Yylex.java</div><div class="line">	javac <span class="variable">$&#123;JFLAGS&#125;</span> Parse/*.java</div><div class="line"></div><div class="line">Parse/Yylex.java: Parse/Tiger.lex</div><div class="line">	<span class="built_in">cd</span> Parse; java jflex.Main Tiger.lex;</div><div class="line"></div><div class="line">ErrorMsg/ErrorMsg.class:  ErrorMsg/*.java</div><div class="line">	javac <span class="variable">$&#123;JFLAGS&#125;</span> ErrorMsg/*.java</div><div class="line"></div><div class="line">clean:</div><div class="line">	rm Parse/*.class ErrorMsg/*.class Parse/Yylex.java</div></pre></td></tr></table></figure>
-<p>​    同时为了更加方便的进行分析,本实验以及之后的实验统一使用<code>Intellij IDEA</code>作为开发环境. 如有需要,可以前往官网进行<a href="https://www.jetbrains.com/idea/">下载</a>.</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/11/01/Lexical_(ch2)/#more" rel="contents">
               Read more &raquo;
