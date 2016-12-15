@@ -233,127 +233,6 @@
             
               
                 
-                <a class="post-title-link" href="/2016/12/15/Lexical_(ch2)/" itemprop="url">
-                  Untitled
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-12-15T18:32:25+08:00" content="2016-12-15">
-              2016-12-15
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/12/15/Lexical_(ch2)/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/15/Lexical_(ch2)/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/12/15/Lexical_(ch2)/" class="leancloud_visitors" data-flag-title="">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">visitors </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>=========</p>
-<p>title: Tiger Compiler report (chapter 2)</p>
-<p>date: 2016/11/1</p>
-<p>tags: Compiler principle </p>
-<p>=========</p>
-<h3 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h3><p>​    使用<code>Jflex</code>工具生成符合<code>Tiger Language</code>的词法分析器,并在给出的框架下进行词法分析,输出Token流.</p>
-<h3 id="实验说明"><a href="#实验说明" class="headerlink" title="实验说明"></a>实验说明</h3><p>​    本实验主要难点在于<code>Jflex</code>的使用,以及<code>lex</code>文件的编写, 由于虎书成书久远,所以在使用虎书框架提供的<code>make</code>文件时会出现一些Bug. </p>
-<p>​    通过下载官网最新版<code>Jflex 1.6.1</code> 并将相应<code>jar</code>包添加至系统路径,便可以使用组新的<code>Jflex</code>进行词法生成. 同时对<code>make</code>文件根据<code>Jfex</code>版本变化细微调整一下指令.修改后的<code>make</code>文件如下</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">JFLAGS=-g</div><div class="line"></div><div class="line">Parse/Main.class: Parse/*.java Parse/Yylex.java</div><div class="line">	javac <span class="variable">$&#123;JFLAGS&#125;</span> Parse/*.java</div><div class="line"></div><div class="line">Parse/Yylex.java: Parse/Tiger.lex</div><div class="line">	<span class="built_in">cd</span> Parse; java jflex.Main Tiger.lex;</div><div class="line"></div><div class="line">ErrorMsg/ErrorMsg.class:  ErrorMsg/*.java</div><div class="line">	javac <span class="variable">$&#123;JFLAGS&#125;</span> ErrorMsg/*.java</div><div class="line"></div><div class="line">clean:</div><div class="line">	rm Parse/*.class ErrorMsg/*.class Parse/Yylex.java</div></pre></td></tr></table></figure>
-<p>​    同时为了更加方便的进行分析,本实验以及之后的实验统一使用<code>Intellij IDEA</code>作为开发环境. 如有需要,可以前往官网进行<a href="https://www.jetbrains.com/idea/">下载</a>.</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/12/15/Lexical_(ch2)/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
                 <a class="post-title-link" href="/2016/12/15/Semant(ch5)/" itemprop="url">
                   Untitled
                 </a>
@@ -1026,6 +905,122 @@
 
 
     
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/11/01/Lexical_(ch2)/" itemprop="url">
+                  Tiger Compiler report (chapter 2)
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-11-01T00:00:00+08:00" content="2016-11-01">
+              2016-11-01
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/11/01/Lexical_(ch2)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/01/Lexical_(ch2)/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/11/01/Lexical_(ch2)/" class="leancloud_visitors" data-flag-title="Tiger Compiler report (chapter 2)">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">visitors </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h3><p>​    使用<code>Jflex</code>工具生成符合<code>Tiger Language</code>的词法分析器,并在给出的框架下进行词法分析,输出Token流.</p>
+<h3 id="实验说明"><a href="#实验说明" class="headerlink" title="实验说明"></a>实验说明</h3><p>​    本实验主要难点在于<code>Jflex</code>的使用,以及<code>lex</code>文件的编写, 由于虎书成书久远,所以在使用虎书框架提供的<code>make</code>文件时会出现一些Bug. </p>
+<p>​    通过下载官网最新版<code>Jflex 1.6.1</code> 并将相应<code>jar</code>包添加至系统路径,便可以使用组新的<code>Jflex</code>进行词法生成. 同时对<code>make</code>文件根据<code>Jfex</code>版本变化细微调整一下指令.修改后的<code>make</code>文件如下</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">JFLAGS=-g</div><div class="line"></div><div class="line">Parse/Main.class: Parse/*.java Parse/Yylex.java</div><div class="line">	javac <span class="variable">$&#123;JFLAGS&#125;</span> Parse/*.java</div><div class="line"></div><div class="line">Parse/Yylex.java: Parse/Tiger.lex</div><div class="line">	<span class="built_in">cd</span> Parse; java jflex.Main Tiger.lex;</div><div class="line"></div><div class="line">ErrorMsg/ErrorMsg.class:  ErrorMsg/*.java</div><div class="line">	javac <span class="variable">$&#123;JFLAGS&#125;</span> ErrorMsg/*.java</div><div class="line"></div><div class="line">clean:</div><div class="line">	rm Parse/*.class ErrorMsg/*.class Parse/Yylex.java</div></pre></td></tr></table></figure>
+<p>​    同时为了更加方便的进行分析,本实验以及之后的实验统一使用<code>Intellij IDEA</code>作为开发环境. 如有需要,可以前往官网进行<a href="https://www.jetbrains.com/idea/">下载</a>.</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/11/01/Lexical_(ch2)/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
   </section>
 
   
@@ -1074,6 +1069,13 @@
 
           
 
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
           
 
         </nav>
