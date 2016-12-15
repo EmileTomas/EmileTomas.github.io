@@ -292,31 +292,14 @@
 
       
         
-          
-            <p>If you once used GPU to do some generally purpose programming, you must be astonished by the fast speed of GPU. Generally speaking, GPU can provide a speed boost about 200 to 300 times over a CPU-bound job. So I will tell you how this happen. </p>
+          <p>If you once used GPU to do some generally purpose programming, you must be astonished by the fast speed of GPU. Generally speaking, GPU can provide a speed boost about 200 to 300 times over a CPU-bound job. So I will tell you how this happen. </p>
 <h3 id="GPU-is-much-faster-than-CPU"><a href="#GPU-is-much-faster-than-CPU" class="headerlink" title="GPU is much faster than CPU"></a>GPU is much faster than CPU</h3><p>At the beginning, GPU was introduced to speed up the graphics processing  with fixed function which provide a powerful floating point calculation ability. So people wandering if it’s possible to make use of GPU to do some calculation-heavy task. In the early time, people can only use assemble language to do programming on GPU. Wherever there is a need, there will be a supply. GPU manufacturers also tried  to make their GPU more useful. For example, NVIDIA provide a C-based language named CUDA which is widely used in the AI, Machine Learning area.</p>
 <p><img src="../uploads/Selection_011.jpg" alt="Selection_011"></p>
-<h3 id="Why-GPU-is-so-fast"><a href="#Why-GPU-is-so-fast" class="headerlink" title="Why GPU is so fast"></a>Why GPU is so fast</h3><p>To understand that, we need know the architecture of GPU at first. Figure below shows the Architecture of G200 (2009)</p>
-<p><img src="../uploads/Selection_002.jpg" alt="Selection_002"></p>
-<ul>
-<li>GTX 200 contains 10 TPC(Texture Processing Cluster)</li>
-<li>Each TPC consists of 3 SM (Streaming Multiprocessors)</li>
-<li>Each SM consists of 8 SP (Stream Processors, also called shader processor or CUDA core ) </li>
-<li>Each SM supports up to 1024 threads</li>
-</ul>
-<p>So there are 8*3*10=240 stream processors! That’s the reason why GPU is so fast. But how could we put so many core into such a limited area (the chip size of CPU and GPU is almost same)? </p>
-<p>Comparing the structure of CPU and GPU you can find the most area of the CPU is used for Cache.<img src="../uploads/Selection_003.jpg" alt="Selection_003"></p>
-<h3 id="How-to-programming-with-GPU"><a href="#How-to-programming-with-GPU" class="headerlink" title="How to programming with GPU"></a>How to programming with GPU</h3><p>The structure of GPU brings powerful parallel performance to GPU. And there are two choice to programming on GPU, using CUDA and OpenCL.</p>
-<h5 id="CUDA-compute-Unified-Device-Architecture"><a href="#CUDA-compute-Unified-Device-Architecture" class="headerlink" title="CUDA (compute Unified Device Architecture)"></a>CUDA (compute Unified Device Architecture)</h5><p>CUDA was firstly introduced to Geforce 8800 by NVIDIA  in 2006. It’s also the name of the corresponding programming language which is based on C. </p>
-<h3 id="One-Recent-GPU-–-GTX-850M"><a href="#One-Recent-GPU-–-GTX-850M" class="headerlink" title="One Recent GPU – GTX 850M"></a>One Recent GPU – GTX 850M</h3><ul>
-<li>GTX 850M contains 5 SM</li>
-<li>Each SM consists of 128 CUDA cores(SP)<ul>
-<li>​</li>
-</ul>
-</li>
-</ul>
-
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/12/15/Guide to GPU Structure/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -423,8 +406,7 @@
 
       
         
-          
-            <h2 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h2><p>通过符号表的构建,对<code>Parsing</code> 输出的抽象语法树进行类型检查.</p>
+          <h2 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h2><p>通过符号表的构建,对<code>Parsing</code> 输出的抽象语法树进行类型检查.</p>
 <p>本实验虎书并未提供现成框架,整个<code>Semant</code> package需要自己建立,当然虎书在pdf中已经提供了大部分的思路和实例代码了.主要工作便是将示例代码推广以及解决其中遇见的各种特殊情况.相比与词法分析与语法分析需要对课本有更深刻的掌握.</p>
 <h2 id="实验说明"><a href="#实验说明" class="headerlink" title="实验说明"></a>实验说明</h2><h3 id="实现说明"><a href="#实现说明" class="headerlink" title="实现说明"></a>实现说明</h3><p>整体思路:</p>
 <p>将语法分析输出的抽象语法输入至语义分析,在语义分析的过程中,构建符号表,一边进行符号表的增添,一边进行类型检查,当发现类型不匹配,便输出错误.</p>
@@ -445,265 +427,11 @@
 </li>
 <li>修改<code>Main.java</code>进行语义分析</li>
 </ol>
-<h3 id="类功能说明"><a href="#类功能说明" class="headerlink" title="类功能说明"></a>类功能说明</h3><table>
-<thead>
-<tr>
-<th>类名</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Env</td>
-<td>打印错误,初始化Tenv和Venv</td>
-</tr>
-<tr>
-<td>Tenv</td>
-<td>Type Environment记录type</td>
-</tr>
-<tr>
-<td>Venv</td>
-<td>Value Environment记录Function以及Variables</td>
-</tr>
-<tr>
-<td>FunEntry</td>
-<td>Function的信息类</td>
-</tr>
-<tr>
-<td>VarEntry</td>
-<td>Var的信息类</td>
-</tr>
-<tr>
-<td>Semant</td>
-<td>唯一可以被调用的公共类,用于语义分析,包括类型检查和填充符号表</td>
-</tr>
-</tbody>
-</table>
-<h2 id="实验步骤"><a href="#实验步骤" class="headerlink" title="实验步骤"></a>实验步骤</h2><ol>
-<li><p>新建<code>Intellij IDEA</code> 工程文件,按照下列文件结构整合虎书框架<code>chap5</code>以及<code>Parsing</code>项目的文件.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">.</div><div class="line">├── Absyn [34 entries exceeds filelimit, not opening dir]</div><div class="line">├── ErrorMsg</div><div class="line">│   └── ErrorMsg.java</div><div class="line">├── java_cup [66 entries exceeds filelimit, not opening dir]</div><div class="line">├── Parse</div><div class="line">│   ├── Grm.java</div><div class="line">│   ├── Lexer.java</div><div class="line">│   ├── Main.java</div><div class="line">│   ├── Parse.java</div><div class="line">│   ├── sym.java</div><div class="line">│   └── Yylex.java</div><div class="line">├── Symbol</div><div class="line">│   ├── Symbol.java</div><div class="line">│   └── Table.java</div><div class="line">└── Types</div><div class="line"> ├── ARRAY.java</div><div class="line"> ├── INT.java</div><div class="line"> ├── NAME.java</div><div class="line"> ├── NIL.java</div><div class="line"> ├── RECORD.java</div><div class="line"> ├── STRING.java</div><div class="line"> ├── Type.java</div><div class="line"> └── VOID.java</div></pre></td></tr></table></figure>
-</li>
-<li><p>按照虎书<code>mcij_chapt05c.pdf</code>要求, 创建<code>Semant Package</code> ,并实现如下的目录结构:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Semant</div><div class="line">├── Entry.java</div><div class="line">├── Env.java</div><div class="line">├── ExpTy.java</div><div class="line">├── FunEntry.java</div><div class="line">├── Semant.java</div><div class="line">└── VarEntry.java</div></pre></td></tr></table></figure>
-<p>类依赖图:</p>
-<p><img src="../uploads/Selection_001.jpg" alt="Selection_001"><br>在实现的过程中需要创建<code>Translate Package</code>新增<code>Exp.java</code>类,但是由于目前阶段不要求进行中间代码翻译,所以只需要提供一个空类即可,在<code>Semant.java</code>中采用null代替所有<code>Exp.java</code>类实例.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//Exp.java实现</span></div><div class="line"><span class="keyword">package</span> Translate;</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Exp</span> </span>&#123; &#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>适当更改<code>Parse/Main</code> ,将抽象语法输入至语义分析中.</p>
-</li>
-</ol>
-<h2 id="实验细节"><a href="#实验细节" class="headerlink" title="实验细节"></a>实验细节</h2><h3 id="Env-java"><a href="#Env-java" class="headerlink" title="Env.java"></a>Env.java</h3><p>类结构</p>
-<p><img src="../uploads/Selection_007.jpg" alt="Selection_007"> </p>
-<p>Env 内部:</p>
-<table>
-<thead>
-<tr>
-<th>属性</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Table tenv</td>
-<td>记录分析过程中的Type声明</td>
-</tr>
-<tr>
-<td>Table venv</td>
-<td>记录分析过程中的变量声明以及函数申明</td>
-</tr>
-<tr>
-<td>ErrorMsg errorMsg</td>
-<td>记录分析过程中的发现的错误</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>函数</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Env(ErrorMsg)</td>
-<td>类的构造函数. <code>ErrorMsg</code>用于分析语义分析过程中的报错.</td>
-</tr>
-<tr>
-<td>InitTenv()</td>
-<td>初始化Tenv, 主要需要添加预置的<code>int</code>和<code>sting</code> 两个type</td>
-</tr>
-<tr>
-<td>InitVenv()</td>
-<td>初始化Venv,主要需要添加预置的函数,如<code>print()</code>,<code>flush()</code> 等</td>
-</tr>
-<tr>
-<td>AddSystemFunction (args)</td>
-<td>工具函数,添加函数至<code>Venv</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="FunEntry-java-VarEntry-java"><a href="#FunEntry-java-VarEntry-java" class="headerlink" title="FunEntry.java VarEntry.java"></a>FunEntry.java VarEntry.java</h3><p>类结构</p>
-<p><img src="../uploads/Selection_008.jpg" alt="Selection_007"> </p>
-<p><img src="../uploads/Selection_009.jpg" alt="Selection_009"> </p>
-<p><code>FunEntry</code> 内部:</p>
-<table>
-<thead>
-<tr>
-<th>属性</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>RECORD formals</td>
-<td>函数的参数</td>
-</tr>
-<tr>
-<td>Type result</td>
-<td>函数的返回值</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>函数</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>FunEntry(RECORD,Type)</td>
-<td>构造函数</td>
-</tr>
-</tbody>
-</table>
-<p><code>VarEntry</code>内部:</p>
-<table>
-<thead>
-<tr>
-<th>属性</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>type</td>
-<td>变量类型</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>函数</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>VarEntry(Type)</td>
-<td>构造函数</td>
-</tr>
-</tbody>
-</table>
-<h3 id="Semant-java"><a href="#Semant-java" class="headerlink" title="Semant.java"></a>Semant.java</h3><p><code>Semant.java</code>是整个语义分析的核心部分,通过将语法分析结果输入进这个类,进而进行语义分析.由于<code>Semant</code>类内部函数过多,所以仅进行抽象分类.</p>
-<table>
-<thead>
-<tr>
-<th>函数</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Semant(ErrorMsg)</td>
-<td>类构造函数</td>
-</tr>
-<tr>
-<td>error(int, String)</td>
-<td>报错函数</td>
-</tr>
-<tr>
-<td>transProg(Exp)</td>
-<td>被外界调用,用于分析抽象语法</td>
-</tr>
-<tr>
-<td>transExp(args)</td>
-<td>对表达式进行分析</td>
-</tr>
-<tr>
-<td>transVar(args)</td>
-<td>对变量进行分析</td>
-</tr>
-<tr>
-<td>transDec(args)</td>
-<td>对声明进行分析</td>
-</tr>
-<tr>
-<td>transTy(Absyn.ty)</td>
-<td>工具函数,用于将<code>Absyn</code>的类转化为相应的<code>Type</code>类</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>变量</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Env env</td>
-<td>符号表,其中包括<code>Venv</code>和<code>Tenv</code></td>
-</tr>
-<tr>
-<td>int loopCount</td>
-<td>用于判断<code>Break</code>语句是否合法</td>
-</tr>
-<tr>
-<td>Type INT, STRING, NIL, VOID</td>
-<td>内置类型</td>
-</tr>
-</tbody>
-</table>
-<h2 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h2><h3 id="正确输入"><a href="#正确输入" class="headerlink" title="正确输入:"></a>正确输入:</h3><p>对所有<code>More/Good</code>以及<code>Official/Good</code>下所有文件测试通过.</p>
-<h3 id="错误输入"><a href="#错误输入" class="headerlink" title="错误输入:"></a>错误输入:</h3><p>范例:</p>
-<p>输入:<code>/home/emile/Documents/Github/TigerCompiler/TestCase/More/Bad/1.tig</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">/* Type mismatch */</div><div class="line">if true then 5 else &quot;hello&quot;</div></pre></td></tr></table></figure>
-<p>输出:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">/home/emile/Documents/Github/TigerCompiler/TestCase/More/Bad/1.tig::2.3: Undeclared Variable : true</div><div class="line">/home/emile/Documents/Github/TigerCompiler/TestCase/More/Bad/1.tig::1.21: Same Return Type Required!</div></pre></td></tr></table></figure>
-<p>这里提供了两个错误:</p>
-<ol>
-<li>提示<code>true</code>为未声明的变量,因为在虎书语言中并未将<code>true</code>和<code>false</code>列为关键字,所以会提示变量未声明.</li>
-<li>其次就是返回类型分别为<code>int</code>和<code>String</code>, 所以报错.</li>
-</ol>
-<h3 id="递归声明的检测"><a href="#递归声明的检测" class="headerlink" title="递归声明的检测"></a>递归声明的检测</h3><p>根据虎书的要求, <code>Semant.java</code>应当有能力检测出连续声明中存在的递归调用问题,比如下列输入:</p>
-<p>输入: </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">/* error: definition of recursive types is interrupted */</div><div class="line">let</div><div class="line">	type tree =treelist</div><div class="line">	type treelist = tree</div><div class="line">	var d:int :=0</div><div class="line"></div><div class="line">in</div><div class="line">	d</div><div class="line">end</div></pre></td></tr></table></figure>
-<p>输出:</p>
-<p><code>/home/emile/Documents/Github/TigerCompiler/TestCase/More/Bad/15.tig::3.11: Loop Type Definition!</code></p>
-<h2 id="实验总结"><a href="#实验总结" class="headerlink" title="实验总结"></a>实验总结</h2><p>通过整个实验,对于编译器的类型检查过程有了更深的理解,也了解到编译器编写的复杂,特别是在没有框架,基本上整个语义分析模块都的自己编写的情况.</p>
-<p>这里说几点不足之处:</p>
-<ol>
-<li><p>根据虎书<code>chapter 5</code> 中的想法, <code>Function</code>和<code>Variable</code> 的声明是同时使用<code>Venv</code> 的,但是这样会带来一个Bug,就是当声明的函数和变量同名时,先声明的会被后声明的覆盖.比如下面这个例子:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">/* bug: var a may covered by function a*/</div><div class="line">let type a = &#123;a : int&#125;</div><div class="line">    var  a := 0</div><div class="line">    function a (a : a) : a = a&#123;a = a.a&#125;</div><div class="line">in</div><div class="line">    a (a&#123;a = a&#125;)</div><div class="line">end</div></pre></td></tr></table></figure>
-<p>类型检查后会提示说<code>a (a{a = a})</code> 中<code>a=a</code>的右值未声明,原因是在将<code>function a</code>添加进<code>Venv</code>后,会覆盖之前添加的<code>var a</code>. </p>
-</li>
-<li><p>递归声明的检测的情形其实很有限,仅限于类似虎书中提到的</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Type a=b</div><div class="line">Type b=c </div><div class="line">Type c=a</div></pre></td></tr></table></figure>
-<p>或者是</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">function a()= b()</div><div class="line">functino b()= a()</div></pre></td></tr></table></figure>
-<p>这几种类型.</p>
-<p>对于类似不那么明显的递归调用还是缺乏相关的实现,比如:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">let</div><div class="line">	type tree =&#123;key: int, children: treelist&#125;</div><div class="line">	type treelist = &#123;hd: tree, tl: treelist&#125;</div><div class="line">	var d:int :=0</div><div class="line">in</div><div class="line">	d</div><div class="line">end</div></pre></td></tr></table></figure>
-<p>其中,<code>tree</code>和/<em> error: definition of recursive types is interrupted </em>/<code>treelist</code>之间是存在递归调用的,但是却检测不出来. 因为虎书提供的<code>NAME.java</code>类中的<code>isLoop()</code>函数智慧检测最外层的属性,也就是说,会认为<code>tree.java</code>的属性是<code>Record</code>,而不会检测其内部是否存在递归的可能性.</p>
-</li>
-</ol>
-
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/11/25/Semant(ch5)/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -810,73 +538,13 @@
 
       
         
-          
-            <h2 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h2><p>对词法分析生成的Token流,利用<code>CUP</code>进行语法检查(chapter 3)以及抽象语法的生成(chapter 4)</p>
+          <h2 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h2><p>对词法分析生成的Token流,利用<code>CUP</code>进行语法检查(chapter 3)以及抽象语法的生成(chapter 4)</p>
 <h2 id="实验说明"><a href="#实验说明" class="headerlink" title="实验说明"></a>实验说明</h2><p>本实验主要使用<code>CUP</code>完成语法分析,重点在于<code>Grm.cup</code>文件的编写,需要仔细阅读<code>Tiger Language Reference Mannual.pdf</code>,对于<code>Expression</code>部分中每一个生成式进行在<code>Grm.cup</code>中完成相应的编写.<br>框架提供的<code>Absyn Package</code> 主要用于<code>Grm.cup</code>文件中用于生成相应的抽象语法.</p>
-<p><code>Absyn Package</code> 类派生关系:<br><img src="../uploads/Selection_010.jpg" alt="Selection_002.jpg"></p>
-<h2 id="实验步骤"><a href="#实验步骤" class="headerlink" title="实验步骤"></a>实验步骤</h2><ol>
-<li><p>新建<code>Intellij IDEA</code>工程文件,并按照下列文件结构整合虎书框架<code>chap3</code>以及<code>chap4</code>目录</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">.</div><div class="line">├── out</div><div class="line">│   └── production</div><div class="line">├── src</div><div class="line">│   ├── Absyn</div><div class="line">│   ├── ErrorMsg</div><div class="line">│   ├── java_cup</div><div class="line">│   ├── Parse</div><div class="line">│   ├── Symbol</div><div class="line">│   └── Grm.cup</div><div class="line">└── Parsing.iml</div></pre></td></tr></table></figure>
-</li>
-<li><p>针对<code>Tiger Language Reference Manual.pdf</code>中的第二部分<code>Expression</code>的生成式补充<code>Grm.cup</code></p>
-</li>
-<li><p>使用<code>bash</code>进入src目录,输入<code>java java_cup.Main -parser Grm -expect 3 -dump_grammar -dump_states &lt;Grm.cup &gt;Grm.out 2&gt;Grm.err</code>生成 <code>Grm.err</code> <code>Grm.java</code> <code>Grm.out</code> <code>sym.java</code>文件.需要确保安装了<code>java</code>并将<code>java</code>添加至系统路径. 如果编译失败,可以打开<code>Grm.err</code>文件查找错误原因.</p>
-</li>
-<li><p>将<code>Grm.java</code> 以及<code>sys.java</code>移动到<code>Parse</code>目录下. <code>Grm.java</code>提供了一个<code>parser</code>以分析程序语法.</p>
-</li>
-<li><p>在<code>Parse.java</code>文件中导入并使用<code>Print.java</code>打印抽象语法结果.</p>
-</li>
-</ol>
-<h2 id="实验细节"><a href="#实验细节" class="headerlink" title="实验细节"></a>实验细节</h2><h3 id="如何翻译"><a href="#如何翻译" class="headerlink" title="如何翻译"></a>如何翻译</h3><p><code>Absyn</code>目录下保存了<code>Tiger Language</code>所需要的产生式对应的类,在翻译<code>Manual</code>的<code>Expression</code>部分时,在<code>CUP</code>文件中通过类似<code>expr ::= INT:i {: RESULT = new IntExp(ileft,i); :};</code>的方式使用.<br><strong>Example</strong><br>比如对于<code>2.1 Lvalues:</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">lvalue:</div><div class="line">	id</div><div class="line">	lvalue.id</div><div class="line">	lvalue[expr]</div></pre></td></tr></table></figure>
-<p><code>Grm.cup</code>中相应的产生式为:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">lvalue ::= ID:i &#123;: RESULT = new SimpleVar(ileft,sym(i)); :&#125;</div><div class="line">      |  lvalue:l DOT ID:i &#123;: RESULT = new FieldVar(l.pos, l, sym(i)); :&#125;</div><div class="line">      |  lvalue:l LBRACK expr:e RBRACK &#123;: RESULT = new SubscriptVar(l.pos, l, e); :&#125;</div><div class="line">      |  ID:i LBRACK expr:e RBRACK &#123;: RESULT = new SubscriptVar(ileft, new SimpleVar(ileft,sym(i)), e); :&#125;</div><div class="line">      ;</div></pre></td></tr></table></figure>
-<p>其中<code>ileft</code>为<code>ID:i</code>在输入文件中左侧的<code>position</code>,该变量由<code>CUP</code>在创建<code>i</code>的时候自动生成,同样的还有<code>iright</code>,类似的语法可以查看虎书框架中<code>java_cup</code>目录下<code>manual.html</code>文件.</p>
-<p>对于虎书其他的表达式,我们可以使用类似的方法在<code>Grm.cup</code>文件中写出其产生式.</p>
-<h3 id="结果保存"><a href="#结果保存" class="headerlink" title="结果保存"></a>结果保存</h3><p>在<code>Grm.cup</code> 文件中添加<code>Exp ParseResult</code>进行最终结果的保存. 同时代码中的<code>Lexer lexer</code> 用于耦合词法分析器和语法分析器.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">parser code &#123;:</div><div class="line">	<span class="keyword">public</span> Exp parseResult;</div><div class="line">	Lexer lexer;</div><div class="line">	...</div><div class="line">    ...</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Grm</span><span class="params">(Lexer l, ErrorMsg.ErrorMsg err)</span> </span>&#123;</div><div class="line">		<span class="keyword">this</span>((Scanner)l);</div><div class="line">		errorMsg=err;</div><div class="line">		lexer=l;</div><div class="line">	&#125;</div><div class="line">:&#125;;</div></pre></td></tr></table></figure>
-<p>当语法分析结束时,得到的结果会存放在<code>parser</code>的<code>parseResult</code>属性属性中</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">start with program;</div><div class="line">program ::=  expr:e &#123;: parser.parseResult = (Exp)e; :&#125;</div></pre></td></tr></table></figure>
-<h3 id="输出抽象语法"><a href="#输出抽象语法" class="headerlink" title="输出抽象语法"></a>输出抽象语法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> Absyn.Print;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Parse</span> </span>&#123;</div><div class="line">    <span class="keyword">public</span> ErrorMsg.ErrorMsg errorMsg;</div><div class="line">    <span class="keyword">public</span> Absyn.Exp absyn;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Parse</span><span class="params">(String filename)</span> </span>&#123;</div><div class="line">        errorMsg = <span class="keyword">new</span> ErrorMsg.ErrorMsg(filename);</div><div class="line">        &#123;</div><div class="line">            java.io.InputStream inp;</div><div class="line">            <span class="keyword">try</span> &#123;</div><div class="line">                inp = <span class="keyword">new</span> java.io.FileInputStream(filename);</div><div class="line">            &#125; <span class="keyword">catch</span> (java.io.FileNotFoundException e) &#123;</div><div class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> Error(<span class="string">"File not found: "</span> + filename);</div><div class="line">            &#125;</div><div class="line">            Grm parser = <span class="keyword">new</span> Grm(<span class="keyword">new</span> Yylex(inp, errorMsg), errorMsg)</div><div class="line">			<span class="keyword">try</span> &#123;</div><div class="line">                parser.<span class="comment">/*debug_*/</span>parse();</div><div class="line">            &#125; <span class="keyword">catch</span> (Throwable e) &#123;</div><div class="line">                e.printStackTrace();</div><div class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> Error(e.toString());</div><div class="line">            &#125; <span class="keyword">finally</span> &#123;</div><div class="line">                <span class="keyword">try</span> &#123;</div><div class="line">                    inp.close();</div><div class="line">                &#125; <span class="keyword">catch</span> (java.io.IOException e) &#123;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            absyn = parser.parseResult;</div><div class="line">            <span class="keyword">new</span> Print(System.out).prExp(absyn, <span class="number">0</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>语法分析主要在虎书框架的<code>Parse</code>类中给出:</p>
-<table>
-<thead>
-<tr>
-<th>代码</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>inp</td>
-<td>文件输入</td>
-</tr>
-<tr>
-<td>parser.parse()</td>
-<td>启动语法分析</td>
-</tr>
-<tr>
-<td>absyn</td>
-<td>保存输出的语法分析结果</td>
-</tr>
-<tr>
-<td>Grm parser = new Grm(new Yylex(inp, errorMsg), errorMsg);</td>
-<td>调用词法分析器进行语法分析</td>
-</tr>
-</tbody>
-</table>
-<h2 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h2><h3 id="正确输入"><a href="#正确输入" class="headerlink" title="正确输入"></a>正确输入</h3><p>输入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">/* empty let, embedded comment */</div><div class="line">let</div><div class="line">	var x:int := 0</div><div class="line">in</div><div class="line">	/*an empty let does not return a value */</div><div class="line">end</div></pre></td></tr></table></figure>
-<p>输出</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">LetExp(</div><div class="line"> DecList(</div><div class="line"> 	VarDec(x,int,IntExp(0),true),</div><div class="line"> 	DecList()),</div><div class="line"> SeqExp(ExpLis())</div><div class="line">)</div></pre></td></tr></table></figure>
-<h3 id="错误输入"><a href="#错误输入" class="headerlink" title="错误输入"></a>错误输入</h3><p>输入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">/* empty let, embedded comment */</div><div class="line">let</div><div class="line">	var x:int := 0</div><div class="line">in</div><div class="line">in	/*error here, dismatch*/</div><div class="line">	/*an empty let does not return a value */</div><div class="line">end</div></pre></td></tr></table></figure>
-<p>输出</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Couldn&apos;t repair and continue parse at character 57 of input</div><div class="line">/home/emile/Documents/Github/TigerCompiler/TestCase/More/Good/10.tig::4.3: Syntax error (IN)</div></pre></td></tr></table></figure>
-<p>语法分析成功输出了一个dismatch error.</p>
-<h2 id="实验总结"><a href="#实验总结" class="headerlink" title="实验总结"></a>实验总结</h2><p>这一次Project的主要难度在于<code>Grm.cup</code>文件的编写,需要对比虎书附录的每一条归纳规则进行一一实现,然后再慢慢debug.但前期主要的困难在于学习<code>cup</code>文件的语法规则,并且在实验的一开始对于如何使用虎书提供的<code>runtime</code>对<code>cup</code>文件进行编译,确实摸索了一段时间,最后还是通过查看附带的<code>manual</code>知道如何使用的.通过这一次实验,自己对于语法分析和词法分析之间的耦合关系确实有了更深的理解,从代码层面了解到了他们之间的调用关系,这也是自己感触很深的一点.</p>
-
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/11/12/Parsing(ch3-ch4)/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
         
       
     </div>
