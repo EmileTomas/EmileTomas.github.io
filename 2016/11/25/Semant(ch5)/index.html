@@ -96,18 +96,18 @@
 本实验虎书并未提供现成框架,整个Semant package需要自己建立,当然虎书在pdf中已经提供了大部分的思路和实例代码了.主要工作便是将示例代码推广以及解决其中遇见的各种特殊情况.相比与词法分析与语法分析需要对课本有更深刻的掌握.
 实验说明实现说明整体思路:
 将语法分析输出的抽象语法输入至语义分析,在语义分析的过程中">
-<meta property="og:image" content="http://yoursite.com/../uploads/Selection_001.jpg">
-<meta property="og:image" content="http://yoursite.com/../uploads/Selection_007.jpg">
-<meta property="og:image" content="http://yoursite.com/../uploads/Selection_008.jpg">
-<meta property="og:image" content="http://yoursite.com/../uploads/Selection_009.jpg">
-<meta property="og:updated_time" content="2016-12-15T11:05:50.733Z">
+<meta property="og:image" content="http://yoursite.com/images/Semant(ch5">
+<meta property="og:image" content="http://yoursite.com/images/Semant(ch5">
+<meta property="og:image" content="http://yoursite.com/images/Semant(ch5">
+<meta property="og:image" content="http://yoursite.com/images/Semant(ch5">
+<meta property="og:updated_time" content="2016-12-16T01:31:13.931Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Tiger Compiler (ch5 Type Check)">
 <meta name="twitter:description" content="实验目的通过符号表的构建,对Parsing 输出的抽象语法树进行类型检查.
 本实验虎书并未提供现成框架,整个Semant package需要自己建立,当然虎书在pdf中已经提供了大部分的思路和实例代码了.主要工作便是将示例代码推广以及解决其中遇见的各种特殊情况.相比与词法分析与语法分析需要对课本有更深刻的掌握.
 实验说明实现说明整体思路:
 将语法分析输出的抽象语法输入至语义分析,在语义分析的过程中">
-<meta name="twitter:image" content="http://yoursite.com/../uploads/Selection_001.jpg">
+<meta name="twitter:image" content="http://yoursite.com/images/Semant(ch5">
 
 
 
@@ -393,14 +393,14 @@
 <li><p>按照虎书<code>mcij_chapt05c.pdf</code>要求, 创建<code>Semant Package</code> ,并实现如下的目录结构:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Semant</div><div class="line">├── Entry.java</div><div class="line">├── Env.java</div><div class="line">├── ExpTy.java</div><div class="line">├── FunEntry.java</div><div class="line">├── Semant.java</div><div class="line">└── VarEntry.java</div></pre></td></tr></table></figure>
 <p>类依赖图:</p>
-<p><img src="../uploads/Selection_001.jpg" alt="Selection_001"><br>在实现的过程中需要创建<code>Translate Package</code>新增<code>Exp.java</code>类,但是由于目前阶段不要求进行中间代码翻译,所以只需要提供一个空类即可,在<code>Semant.java</code>中采用null代替所有<code>Exp.java</code>类实例.</p>
+<p><img src="images/Semant(ch5" alt="class dependency graph">/Selection_001.jpg)<br>在实现的过程中需要创建<code>Translate Package</code>新增<code>Exp.java</code>类,但是由于目前阶段不要求进行中间代码翻译,所以只需要提供一个空类即可,在<code>Semant.java</code>中采用null代替所有<code>Exp.java</code>类实例.</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//Exp.java实现</span></div><div class="line"><span class="keyword">package</span> Translate;</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Exp</span> </span>&#123; &#125;</div></pre></td></tr></table></figure>
 </li>
 <li><p>适当更改<code>Parse/Main</code> ,将抽象语法输入至语义分析中.</p>
 </li>
 </ol>
 <h2 id="实验细节"><a href="#实验细节" class="headerlink" title="实验细节"></a>实验细节</h2><h3 id="Env-java"><a href="#Env-java" class="headerlink" title="Env.java"></a>Env.java</h3><p>类结构</p>
-<p><img src="../uploads/Selection_007.jpg" alt="Selection_007"> </p>
+<p><img src="images/Semant(ch5" alt="Env structure">/Selection_007.jpg) </p>
 <p>Env 内部:</p>
 <table>
 <thead>
@@ -451,8 +451,8 @@
 </tbody>
 </table>
 <h3 id="FunEntry-java-VarEntry-java"><a href="#FunEntry-java-VarEntry-java" class="headerlink" title="FunEntry.java VarEntry.java"></a>FunEntry.java VarEntry.java</h3><p>类结构</p>
-<p><img src="../uploads/Selection_008.jpg" alt="Selection_007"> </p>
-<p><img src="../uploads/Selection_009.jpg" alt="Selection_009"> </p>
+<p><img src="images/Semant(ch5" alt="FunEntry structure">/Selection_008.jpg) </p>
+<p><img src="images/Semant(ch5" alt="VarEntry Structure">/Selection_009.jpg) </p>
 <p><code>FunEntry</code> 内部:</p>
 <table>
 <thead>

@@ -91,9 +91,9 @@
 <meta property="og:site_name" content="Wonderland">
 <meta property="og:description" content="If you once used GPU to do some generally purpose programming, you must be astonished by the fast speed of GPU. Generally speaking, GPU can provide a speed boost about 200 to 300 times over a CPU-boun">
 <meta property="og:image" content="http://yoursite.com/images/Guide to GPU Structure/Selection_011.jpg">
-<meta property="og:image" content="http://yoursite.com/../uploads/Selection_002.jpg">
-<meta property="og:image" content="http://yoursite.com/../uploads/Selection_003.jpg">
-<meta property="og:updated_time" content="2016-12-16T01:24:23.782Z">
+<meta property="og:image" content="http://yoursite.com/images/Guide to GPU Structure/Selection_002.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Guide to GPU Structure/Selection_003.jpg">
+<meta property="og:updated_time" content="2016-12-16T01:27:20.694Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Guide to GPU Structure">
 <meta name="twitter:description" content="If you once used GPU to do some generally purpose programming, you must be astonished by the fast speed of GPU. Generally speaking, GPU can provide a speed boost about 200 to 300 times over a CPU-boun">
@@ -322,10 +322,10 @@
       
         <p>If you once used GPU to do some generally purpose programming, you must be astonished by the fast speed of GPU. Generally speaking, GPU can provide a speed boost about 200 to 300 times over a CPU-bound job. So I will tell you how this happen. </p>
 <h3 id="GPU-is-much-faster-than-CPU"><a href="#GPU-is-much-faster-than-CPU" class="headerlink" title="GPU is much faster than CPU"></a>GPU is much faster than CPU</h3><p>At the beginning, GPU was introduced to speed up the graphics processing  with fixed function which provide a powerful floating point calculation ability. So people wandering if it’s possible to make use of GPU to do some calculation-heavy task. In the early time, people can only use assemble language to do programming on GPU. Wherever there is a need, there will be a supply. GPU manufacturers also tried  to make their GPU more useful. For example, NVIDIA provide a C-based language named CUDA which is widely used in the AI, Machine Learning area.</p>
-<p><img src="/images/Guide to GPU Structure/Selection_011.jpg" alt="Selection_011"></p>
+<p><img src="/images/Guide to GPU Structure/Selection_011.jpg" alt="GPU and CPU size comparition"></p>
 <a id="more"></a>
 <h3 id="Why-GPU-is-so-fast"><a href="#Why-GPU-is-so-fast" class="headerlink" title="Why GPU is so fast"></a>Why GPU is so fast</h3><p>To understand that, we need know the architecture of GPU at first. Figure below shows the Architecture of G200 (2009)</p>
-<p><img src="../uploads/Selection_002.jpg" alt="Selection_002"></p>
+<p><img src="/images/Guide to GPU Structure/Selection_002.jpg" alt="Nvidia G200 Architecture"></p>
 <ul>
 <li>GTX 200 contains 10 TPC(Texture Processing Cluster)</li>
 <li>Each TPC consists of 3 SM (Streaming Multiprocessors)</li>
@@ -333,7 +333,7 @@
 <li>Each SM supports up to 1024 threads</li>
 </ul>
 <p>So there are 8*3*10=240 stream processors! That’s the reason why GPU is so fast. But how could we put so many core into such a limited area (the chip size of CPU and GPU is almost same)? </p>
-<p>Comparing the structure of CPU and GPU you can find the most area of the CPU is used for Cache.<img src="../uploads/Selection_003.jpg" alt="Selection_003"></p>
+<p>Comparing the structure of CPU and GPU you can find the most area of the CPU is used for Cache.<img src="/images/Guide to GPU Structure/Selection_003.jpg" alt="CPU and GPU structure"></p>
 <h3 id="How-to-programming-with-GPU"><a href="#How-to-programming-with-GPU" class="headerlink" title="How to programming with GPU"></a>How to programming with GPU</h3><p>The structure of GPU brings powerful parallel performance to GPU. And there are two choice to programming on GPU, using CUDA and OpenCL.</p>
 <h5 id="CUDA-compute-Unified-Device-Architecture"><a href="#CUDA-compute-Unified-Device-Architecture" class="headerlink" title="CUDA (compute Unified Device Architecture)"></a>CUDA (compute Unified Device Architecture)</h5><p>CUDA was firstly introduced to Geforce 8800 by NVIDIA  in 2006. It’s also the name of the corresponding programming language which is based on C. </p>
 <h3 id="One-Recent-GPU-–-GTX-850M"><a href="#One-Recent-GPU-–-GTX-850M" class="headerlink" title="One Recent GPU – GTX 850M"></a>One Recent GPU – GTX 850M</h3><ul>
