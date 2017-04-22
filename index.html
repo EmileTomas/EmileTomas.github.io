@@ -257,7 +257,7 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2017-03-20T00:00:00-07:00" content="2017-03-20">
+            <time itemprop="dateCreated" datetime="2017-03-20T00:00:00+08:00" content="2017-03-20">
               2017-03-20
             </time>
           </span>
@@ -391,7 +391,7 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-12-15T00:00:00-08:00" content="2016-12-15">
+            <time itemprop="dateCreated" datetime="2016-12-15T00:00:00+08:00" content="2016-12-15">
               2016-12-15
             </time>
           </span>
@@ -524,7 +524,7 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-11-25T00:00:00-08:00" content="2016-11-25">
+            <time itemprop="dateCreated" datetime="2016-11-25T00:00:00+08:00" content="2016-11-25">
               2016-11-25
             </time>
           </span>
@@ -658,7 +658,7 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-11-12T00:00:00-08:00" content="2016-11-12">
+            <time itemprop="dateCreated" datetime="2016-11-12T00:00:00+08:00" content="2016-11-12">
               2016-11-12
             </time>
           </span>
@@ -790,7 +790,7 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-11-01T00:00:00-07:00" content="2016-11-01">
+            <time itemprop="dateCreated" datetime="2016-11-01T00:00:00+08:00" content="2016-11-01">
               2016-11-01
             </time>
           </span>
@@ -888,6 +888,288 @@
 
 
     
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/10/13/Visual Studio 2015 MPI setting/" itemprop="url">
+                  Visual Studio 2015下MPI环境配置
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-10-13T00:00:00+08:00" content="2016-10-13">
+              2016-10-13
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Tutorials/" itemprop="url" rel="index">
+                    <span itemprop="name">Tutorials</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/13/Visual Studio 2015 MPI setting/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/13/Visual Studio 2015 MPI setting/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/10/13/Visual Studio 2015 MPI setting/" class="leancloud_visitors" data-flag-title="Visual Studio 2015下MPI环境配置">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">visitors </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <ol>
+<li><p>在微软的MPI<a href="https://www.microsoft.com/en-us/download/details.aspx?id=5298">下载地址</a>中<strong>MS-MPI downloads</strong>目录下下载<strong>MS-MPI</strong>内两个安装包并安装。<br>分别是：</p>
+<ul>
+<li><strong>msmpisdk.msi</strong></li>
+<li><strong>MSMpiSetup.exe</strong><br> <br/></li>
+</ul>
+</li>
+<li><p>在VS中创建一个C++工程，选择为空项目。<br> <br/></p>
+</li>
+<li><p>进入项目-&gt; 项目属性中，点击<strong>C/C++</strong> ，在附加包含目录下添加</p>
+<ul>
+<li><strong>C:\Program Files (x86)\Microsoft SDKs\MPI\Include;</strong></li>
+<li><p><strong>C:\Program Files (x86)\Microsoft SDKs\MPI\Include\x64;</strong></p>
+<p><img src="http://i.imgur.com/QzEYULk.png" alt="配置界面"><br><em>注：如果是32位程序则添加相应的X86目录即可</em><br><br/></p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/10/13/Visual Studio 2015 MPI setting/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/09/13/Connect Google Services via Ipv6 for SJTUers/" itemprop="url">
+                  上海交通大学IPv6直连谷歌系服务教程
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-09-13T00:00:00+08:00" content="2016-09-13">
+              2016-09-13
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Tutorials/" itemprop="url" rel="index">
+                    <span itemprop="name">Tutorials</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/13/Connect Google Services via Ipv6 for SJTUers/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/13/Connect Google Services via Ipv6 for SJTUers/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/09/13/Connect Google Services via Ipv6 for SJTUers/" class="leancloud_visitors" data-flag-title="上海交通大学IPv6直连谷歌系服务教程">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">visitors </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><strong>实现效果</strong>：<br>通过本教程后，用户可以直接访问谷歌系服务，如Gmail， YouTube，Google Play等</p>
+<p><strong>说明</strong>：</p>
+<ul>
+<li><p>本教程仅适用上海交通大学学生</p>
+</li>
+<li><p>仅适用Windows 7 及之后版本</p>
+</li>
+<li><p>在寝室适用需要网线直连电脑（因为通过WiFi实现IPv6对路由器有一定要求）或者连接SJTU无线网络</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/13/Connect Google Services via Ipv6 for SJTUers/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
   </section>
 
   
@@ -929,7 +1211,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-count">7</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -937,7 +1219,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>
@@ -946,7 +1228,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>

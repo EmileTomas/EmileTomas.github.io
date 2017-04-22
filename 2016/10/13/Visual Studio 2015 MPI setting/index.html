@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="GPU Architecture,CUDA," />
+  <meta name="keywords" content="Multi-thread,MPI,Visual Studio 2015," />
 
 
 
@@ -84,20 +84,57 @@
 
 
 
-<meta name="description" content="If you once used GPU to do some generally purpose programming, you must be astonished by the fast speed of GPU. Generally speaking, GPU can provide a speed boost about 200 to 300 times over a CPU-boun">
+<meta name="description" content="在微软的MPI下载地址中MS-MPI downloads目录下下载MS-MPI内两个安装包并安装。分别是：
+
+msmpisdk.msi
+MSMpiSetup.exe 
+
+
+在VS中创建一个C++工程，选择为空项目。 
+
+进入项目-&amp;gt; 项目属性中，点击C/C++ ，在附加包含目录下添加
+
+C:\Program Files (x86)\Microsoft SDKs\MPI\Include;
+C">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Guide to GPU Structure">
-<meta property="og:url" content="http://yoursite.com/2016/12/15/Guide to GPU Structure/index.html">
+<meta property="og:title" content="Visual Studio 2015下MPI环境配置">
+<meta property="og:url" content="http://yoursite.com/2016/10/13/Visual Studio 2015 MPI setting/index.html">
 <meta property="og:site_name" content="Wonderland">
-<meta property="og:description" content="If you once used GPU to do some generally purpose programming, you must be astonished by the fast speed of GPU. Generally speaking, GPU can provide a speed boost about 200 to 300 times over a CPU-boun">
-<meta property="og:image" content="http://yoursite.com/images/Guide to GPU Structure/Selection_011.jpg">
-<meta property="og:image" content="http://yoursite.com/images/Guide to GPU Structure/Selection_002.jpg">
-<meta property="og:image" content="http://yoursite.com/images/Guide to GPU Structure/Selection_003.jpg">
+<meta property="og:description" content="在微软的MPI下载地址中MS-MPI downloads目录下下载MS-MPI内两个安装包并安装。分别是：
+
+msmpisdk.msi
+MSMpiSetup.exe 
+
+
+在VS中创建一个C++工程，选择为空项目。 
+
+进入项目-&amp;gt; 项目属性中，点击C/C++ ，在附加包含目录下添加
+
+C:\Program Files (x86)\Microsoft SDKs\MPI\Include;
+C">
+<meta property="og:image" content="http://i.imgur.com/QzEYULk.png">
+<meta property="og:image" content="http://i.imgur.com/XCJjuV5.png">
+<meta property="og:image" content="http://i.imgur.com/GNCwIbk.png">
+<meta property="og:image" content="http://i.imgur.com/jZaD3DO.png">
+<meta property="og:image" content="http://i.imgur.com/ucY6SWV.png">
+<meta property="og:image" content="http://i.imgur.com/PvFt0IE.png">
+<meta property="og:image" content="http://i.imgur.com/jZaD3DO.png">
 <meta property="og:updated_time" content="2017-04-14T15:13:13.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Guide to GPU Structure">
-<meta name="twitter:description" content="If you once used GPU to do some generally purpose programming, you must be astonished by the fast speed of GPU. Generally speaking, GPU can provide a speed boost about 200 to 300 times over a CPU-boun">
-<meta name="twitter:image" content="http://yoursite.com/images/Guide to GPU Structure/Selection_011.jpg">
+<meta name="twitter:title" content="Visual Studio 2015下MPI环境配置">
+<meta name="twitter:description" content="在微软的MPI下载地址中MS-MPI downloads目录下下载MS-MPI内两个安装包并安装。分别是：
+
+msmpisdk.msi
+MSMpiSetup.exe 
+
+
+在VS中创建一个C++工程，选择为空项目。 
+
+进入项目-&amp;gt; 项目属性中，点击C/C++ ，在附加包含目录下添加
+
+C:\Program Files (x86)\Microsoft SDKs\MPI\Include;
+C">
+<meta name="twitter:image" content="http://i.imgur.com/QzEYULk.png">
 
 
 
@@ -115,7 +152,7 @@
   };
 </script>
 
-  <title> Guide to GPU Structure | Wonderland </title>
+  <title> Visual Studio 2015下MPI环境配置 | Wonderland </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -245,7 +282,7 @@
             
             
               
-                Guide to GPU Structure
+                Visual Studio 2015下MPI环境配置
               
             
           </h1>
@@ -257,8 +294,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-12-15T00:00:00+08:00" content="2016-12-15">
-              2016-12-15
+            <time itemprop="dateCreated" datetime="2016-10-13T00:00:00+08:00" content="2016-10-13">
+              2016-10-13
             </time>
           </span>
 
@@ -271,8 +308,8 @@
               <span class="post-meta-item-text">In</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Notes/" itemprop="url" rel="index">
-                    <span itemprop="name">Notes</span>
+                  <a href="/categories/Tutorials/" itemprop="url" rel="index">
+                    <span itemprop="name">Tutorials</span>
                   </a>
                 </span>
 
@@ -287,8 +324,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/12/15/Guide to GPU Structure/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/15/Guide to GPU Structure/" itemprop="commentsCount"></span>
+                <a href="/2016/10/13/Visual Studio 2015 MPI setting/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/13/Visual Studio 2015 MPI setting/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -298,7 +335,7 @@
 
           
           
-             <span id="/2016/12/15/Guide to GPU Structure/" class="leancloud_visitors" data-flag-title="Guide to GPU Structure">
+             <span id="/2016/10/13/Visual Studio 2015 MPI setting/" class="leancloud_visitors" data-flag-title="Visual Studio 2015下MPI环境配置">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -320,29 +357,50 @@
       
 
       
-        <p>If you once used GPU to do some generally purpose programming, you must be astonished by the fast speed of GPU. Generally speaking, GPU can provide a speed boost about 200 to 300 times over a CPU-bound job. So I will tell you how this happen. </p>
-<h3 id="GPU-is-much-faster-than-CPU"><a href="#GPU-is-much-faster-than-CPU" class="headerlink" title="GPU is much faster than CPU"></a>GPU is much faster than CPU</h3><p>At the beginning, GPU was introduced to speed up the graphics processing  with fixed function which provide a powerful floating point calculation ability. So people wandering if it’s possible to make use of GPU to do some calculation-heavy task. In the early time, people can only use assemble language to do programming on GPU. Wherever there is a need, there will be a supply. GPU manufacturers also tried  to make their GPU more useful. For example, NVIDIA provide a C-based language named CUDA which is widely used in the AI, Machine Learning area.</p>
-<p><img src="/images/Guide to GPU Structure/Selection_011.jpg" alt="GPU and CPU size comparition"></p>
-<a id="more"></a>
-<h3 id="Why-GPU-is-so-fast"><a href="#Why-GPU-is-so-fast" class="headerlink" title="Why GPU is so fast"></a>Why GPU is so fast</h3><p>To understand that, we need know the architecture of GPU at first. Figure below shows the Architecture of G200 (2009)</p>
-<p><img src="/images/Guide to GPU Structure/Selection_002.jpg" alt="Nvidia G200 Architecture"></p>
+        <ol>
+<li><p>在微软的MPI<a href="https://www.microsoft.com/en-us/download/details.aspx?id=5298" target="_blank" rel="external">下载地址</a>中<strong>MS-MPI downloads</strong>目录下下载<strong>MS-MPI</strong>内两个安装包并安装。<br>分别是：</p>
 <ul>
-<li>GTX 200 contains 10 TPC(Texture Processing Cluster)</li>
-<li>Each TPC consists of 3 SM (Streaming Multiprocessors)</li>
-<li>Each SM consists of 8 SP (Stream Processors, also called shader processor or CUDA core ) </li>
-<li>Each SM supports up to 1024 threads</li>
-</ul>
-<p>So there are 8*3*10=240 stream processors! That’s the reason why GPU is so fast. But how could we put so many core into such a limited area (the chip size of CPU and GPU is almost same)? </p>
-<p>Comparing the structure of CPU and GPU you can find the most area of the CPU is used for Cache.<img src="/images/Guide to GPU Structure/Selection_003.jpg" alt="CPU and GPU structure"></p>
-<h3 id="How-to-programming-with-GPU"><a href="#How-to-programming-with-GPU" class="headerlink" title="How to programming with GPU"></a>How to programming with GPU</h3><p>The structure of GPU brings powerful parallel performance to GPU. And there are two choice to programming on GPU, using CUDA and OpenCL.</p>
-<h5 id="CUDA-compute-Unified-Device-Architecture"><a href="#CUDA-compute-Unified-Device-Architecture" class="headerlink" title="CUDA (compute Unified Device Architecture)"></a>CUDA (compute Unified Device Architecture)</h5><p>CUDA was firstly introduced to Geforce 8800 by NVIDIA  in 2006. It’s also the name of the corresponding programming language which is based on C. </p>
-<h3 id="One-Recent-GPU-–-GTX-850M"><a href="#One-Recent-GPU-–-GTX-850M" class="headerlink" title="One Recent GPU – GTX 850M"></a>One Recent GPU – GTX 850M</h3><ul>
-<li>GTX 850M contains 5 SM</li>
-<li>Each SM consists of 128 CUDA cores(SP)<ul>
-<li>​</li>
+<li><strong>msmpisdk.msi</strong></li>
+<li><strong>MSMpiSetup.exe</strong><br> <br></li>
 </ul>
 </li>
+<li><p>在VS中创建一个C++工程，选择为空项目。<br> <br></p>
+</li>
+<li><p>进入项目-&gt; 项目属性中，点击<strong>C/C++</strong> ，在附加包含目录下添加</p>
+<ul>
+<li><strong>C:\Program Files (x86)\Microsoft SDKs\MPI\Include;</strong></li>
+<li><p><strong>C:\Program Files (x86)\Microsoft SDKs\MPI\Include\x64;</strong></p>
+<p><img src="http://i.imgur.com/QzEYULk.png" alt="配置界面"><br><em>注：如果是32位程序则添加相应的X86目录即可</em><br><br></p>
+<a id="more"></a>
+</li>
 </ul>
+</li>
+<li><p>在链接器-&gt; 所有选项中<strong>附加库目录</strong>中添加</p>
+<ul>
+<li><p><strong>C:\Program Files (x86)\Microsoft SDKs\MPI\Lib\x64;</strong></p>
+<p>在<strong>附加依赖项</strong>末尾添加</p>
+</li>
+<li><strong>msmpi.lib;</strong><br><img src="http://i.imgur.com/XCJjuV5.png" alt="配置界面"><br><br></li>
+</ul>
+</li>
+<li><p>添加示例程序<br> ​    </p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">#include &quot;mpi.h&quot;  </div><div class="line">#include &lt;stdio.h&gt;  </div><div class="line">#include &lt;math.h&gt;  </div><div class="line">#include &lt;Windows.h&gt;  </div><div class="line"></div><div class="line">// mpiexec.exe</div><div class="line">int main(int argc, char* argv[])</div><div class="line">&#123;</div><div class="line">	int myid, numproces;</div><div class="line">	int namelen;</div><div class="line">	char processor_name[MPI_MAX_PROCESSOR_NAME];</div><div class="line"></div><div class="line">	MPI_Init(&amp;argc, &amp;argv);</div><div class="line">	MPI_Comm_rank(MPI_COMM_WORLD, &amp;myid);</div><div class="line">	MPI_Comm_size(MPI_COMM_WORLD, &amp;numproces);</div><div class="line">	MPI_Get_processor_name(processor_name, &amp;namelen);</div><div class="line">	fprintf(stderr, &quot;hello world! process %d of %d on %s\n&quot;, myid, numproces, processor_name);</div><div class="line">	MPI_Finalize();</div><div class="line">	//system(&quot;pause&quot;);  </div><div class="line">	return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>启动程序，会发现只打印一条数据，并没有模拟并行化。<br> <img src="http://i.imgur.com/GNCwIbk.png" alt="输出结果"></p>
+</li>
+</ol>
+<h2 id="模拟群集运行"><a href="#模拟群集运行" class="headerlink" title="模拟群集运行"></a>模拟群集运行</h2><ol>
+<li>打开命令行界面，进入项目目录下的/x64/Debug子目录</li>
+<li>执行mpiexec.exe -n 4 项目.exe</li>
+<li>显示结果<br><img src="http://i.imgur.com/jZaD3DO.png" alt="群集输出结果"></li>
+</ol>
+<h2 id="Open-Command-Line-插件"><a href="#Open-Command-Line-插件" class="headerlink" title="Open Command Line 插件"></a><strong>Open Command Line</strong> 插件</h2><p>如何在Visual Studio 下快速打开项目路径，省去cd命令，这里推荐<strong>Open Command Line</strong> 插件<br><a href="https://visualstudiogallery.msdn.microsoft.com/4e84e2cf-2d6b-472a-b1e2-b84932511379" target="_blank" rel="external">下载地址</a></p>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><ol>
+<li>安装完成后，重启Visual Studio，在右侧项目窗口右键，选择Open Command Line，点击Setting<br> <img src="http://i.imgur.com/ucY6SWV.png" alt="插件配置"></li>
+<li>在选项窗口中的<strong>Command arguments </strong>写入<strong>/k cd ../x64/Debug</strong>，点击确认<br> <img src="http://i.imgur.com/PvFt0IE.png" alt="插件配置"></li>
+<li>在Visual Studio 主界面使用快捷键Alt+Space 即可快速进入程序相应目录</li>
+<li>输入mpiexec.exe -n 4 项目.exe 。<br> 显示结果<img src="http://i.imgur.com/jZaD3DO.png" alt="群集输出结果"></li>
+</ol>
 
       
     </div>
@@ -364,9 +422,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/GPU-Architecture/" rel="tag">#GPU Architecture</a>
+            <a href="/tags/Multi-thread/" rel="tag">#Multi-thread</a>
           
-            <a href="/tags/CUDA/" rel="tag">#CUDA</a>
+            <a href="/tags/MPI/" rel="tag">#MPI</a>
+          
+            <a href="/tags/Visual-Studio-2015/" rel="tag">#Visual Studio 2015</a>
           
         </div>
       
@@ -375,16 +435,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/11/25/Semant(ch5)/" rel="next" title="Tiger Compiler (ch5 Type Check)">
-                <i class="fa fa-chevron-left"></i> Tiger Compiler (ch5 Type Check)
+              <a href="/2016/09/13/Connect Google Services via Ipv6 for SJTUers/" rel="next" title="上海交通大学IPv6直连谷歌系服务教程">
+                <i class="fa fa-chevron-left"></i> 上海交通大学IPv6直连谷歌系服务教程
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/03/20/New Algorithm to Calculate Rotate Speed Of Ping-Pong Ball/" rel="prev" title="New Algorithm to Calculate Rotate Speed Of Ping-Pong Ball">
-                New Algorithm to Calculate Rotate Speed Of Ping-Pong Ball <i class="fa fa-chevron-right"></i>
+              <a href="/2016/11/01/Lexical_(ch2)/" rel="prev" title="Tiger Compiler (ch2 Lexical)">
+                Tiger Compiler (ch2 Lexical) <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -411,8 +471,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/12/15/Guide to GPU Structure/"
-           data-title="Guide to GPU Structure" data-url="http://yoursite.com/2016/12/15/Guide to GPU Structure/">
+      <div class="ds-thread" data-thread-key="2016/10/13/Visual Studio 2015 MPI setting/"
+           data-title="Visual Studio 2015下MPI环境配置" data-url="http://yoursite.com/2016/10/13/Visual Studio 2015 MPI setting/">
       </div>
     
   </div>
@@ -523,7 +583,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#GPU-is-much-faster-than-CPU"><span class="nav-number">1.</span> <span class="nav-text">GPU is much faster than CPU</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Why-GPU-is-so-fast"><span class="nav-number">2.</span> <span class="nav-text">Why GPU is so fast</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#How-to-programming-with-GPU"><span class="nav-number">3.</span> <span class="nav-text">How to programming with GPU</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#CUDA-compute-Unified-Device-Architecture"><span class="nav-number">3.0.1.</span> <span class="nav-text">CUDA (compute Unified Device Architecture)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#One-Recent-GPU-–-GTX-850M"><span class="nav-number">4.</span> <span class="nav-text">One Recent GPU – GTX 850M</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#模拟群集运行"><span class="nav-number">1.</span> <span class="nav-text">模拟群集运行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Open-Command-Line-插件"><span class="nav-number">2.</span> <span class="nav-text">Open Command Line 插件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置"><span class="nav-number">2.1.</span> <span class="nav-text">配置</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
